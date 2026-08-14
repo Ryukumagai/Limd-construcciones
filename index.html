@@ -20,18 +20,19 @@ html{
 
 body{
     background:#f5f5f5;
+    color:#333;
 }
 
 header{
     position:fixed;
-    width:100%;
     top:0;
-    z-index:1000;
+    width:100%;
     background:#111;
     padding:15px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    z-index:1000;
 }
 
 .logo{
@@ -47,63 +48,59 @@ header{
 nav a{
     color:white;
     text-decoration:none;
-    margin-left:25px;
+    margin-left:20px;
     font-weight:bold;
 }
 
 .hero{
     height:100vh;
     background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-    url("https://images.unsplash.com/photo-1504307651254-35680f356dfd");
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url('https://images.unsplash.com/photo-1504307651254-35680f3565fd');
     background-size:cover;
     background-position:center;
     display:flex;
     align-items:center;
     color:white;
+    padding:0 8%;
 }
 
 .hero-content{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
+    max-width:800px;
 }
 
 .hero h1{
-    font-size:70px;
+    font-size:clamp(36px,6vw,70px);
     line-height:1.1;
 }
 
-.hero h1 span{
+.hero span{
     color:#ff8c00;
 }
 
 .hero p{
-    margin-top:20px;
-    font-size:22px;
-    max-width:700px;
+    margin:20px 0;
+    font-size:18px;
 }
 
 .btn{
     display:inline-block;
-    margin-top:30px;
-    padding:15px 35px;
     background:#ff8c00;
     color:white;
+    padding:15px 30px;
     text-decoration:none;
-    border-radius:8px;
+    border-radius:5px;
     font-weight:bold;
 }
 
 section{
-    padding:80px 10%;
+    padding:90px 8%;
 }
 
 .titulo{
     text-align:center;
     font-size:40px;
     margin-bottom:50px;
-    color:#222;
 }
 
 .servicios{
@@ -127,7 +124,7 @@ section{
 
 .nosotros{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
     gap:40px;
     align-items:center;
 }
@@ -179,29 +176,56 @@ footer{
     right:20px;
     background:#25D366;
     color:white;
-    width:65px;
-    height:65px;
+    width:60px;
+    height:60px;
     border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    text-align:center;
+    line-height:60px;
     font-size:30px;
     text-decoration:none;
+    box-shadow:0 0 10px rgba(0,0,0,.3);
 }
 
-@media(max-width:768px){
+/* RESPONSIVE */
 
-.hero h1{
-    font-size:45px;
-}
+@media (max-width:768px){
 
-.nosotros{
-    grid-template-columns:1fr;
-}
+    header{
+        flex-direction:column;
+        padding:10px;
+    }
 
-nav{
-    display:none;
-}
+    .logo{
+        margin-bottom:10px;
+        font-size:24px;
+    }
+
+    nav{
+        text-align:center;
+    }
+
+    nav a{
+        display:inline-block;
+        margin:5px;
+        font-size:14px;
+    }
+
+    .hero{
+        text-align:center;
+        justify-content:center;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .titulo{
+        font-size:30px;
+    }
+
+    section{
+        padding:80px 5%;
+    }
 
 }
 
@@ -213,11 +237,10 @@ nav{
 <header>
 
 <div class="logo">
-L<span>I</span>MD
+LIMD <span>Construcciones</span>
 </div>
 
 <nav>
-<a href="#inicio">Inicio</a>
 <a href="#nosotros">Nosotros</a>
 <a href="#servicios">Servicios</a>
 <a href="#proyectos">Proyectos</a>
@@ -226,7 +249,7 @@ L<span>I</span>MD
 
 </header>
 
-<section class="hero" id="inicio">
+<section class="hero">
 
 <div class="hero-content">
 
@@ -236,8 +259,8 @@ CONSTRUIMOS Y TRANSFORMAMOS
 </h1>
 
 <p>
-Más de 11 años de experiencia (desde 2015) en construcción,
-ampliación, remodelación y mantenimiento locativo.
+Más de 11 años de experiencia en construcción,
+remodelación, ampliación y mantenimiento locativo.
 </p>
 
 <a href="https://wa.me/573138608226" class="btn">
@@ -255,21 +278,19 @@ Solicitar Cotización
 <div class="nosotros">
 
 <div>
-
 <p>
-LIMD es una empresa especializada en construcción,
-remodelación, mantenimiento locativo y acabados de alta calidad.
-Desde 2015 trabajamos con compromiso, responsabilidad y
-excelencia para entregar proyectos que superan las expectativas
-de nuestros clientes.
-</p>
+LIMD Construcciones es una empresa especializada en
+construcción, remodelación, mantenimiento locativo y
+acabados de alta calidad.
 
+Desde 2015 trabajamos con responsabilidad,
+cumplimiento y excelencia para entregar proyectos
+que superan las expectativas de nuestros clientes.
+</p>
 </div>
 
 <div>
-
 <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab">
-
 </div>
 
 </div>
@@ -340,9 +361,8 @@ Contáctanos
 </h2>
 
 <p>📞 313 860 8226</p>
-<p>📞 316 866 4152</p>
-<p>🏗️ LIMD Construcciones</p>
-<p>📅 Desde 2015</p>
+<p>📍 LIMD Construcciones</p>
+<p>🏗️ Desde 2015</p>
 
 <a href="https://wa.me/573138608226" class="btn">
 Hablar por WhatsApp
@@ -351,9 +371,7 @@ Hablar por WhatsApp
 </section>
 
 <footer>
-
 © 2026 LIMD Construcciones - Todos los derechos reservados
-
 </footer>
 
 <a class="whatsapp" href="https://wa.me/573138608226">
