@@ -3,387 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>LIMD | Construcción y Diseño</title>
+    <title>LIMD Construcciones</title>
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
-    <header class="header">
+<header>
+    <div class="container nav">
 
         <div class="logo">
             <div class="logo-icon">L</div>
-
-            <div class="logo-text">
-                <strong>LIMD</strong>
+            <div>
+                <h3>LIMD</h3>
                 <span>Construcciones</span>
             </div>
         </div>
 
-        <nav class="nav">
+        <nav>
             <a href="#inicio">Inicio</a>
-            <a href="#nosotros">Nosotros</a>
             <a href="#servicios">Servicios</a>
-            <a href="#galeria">Proyectos</a>
+            <a href="#proyectos">Proyectos</a>
             <a href="#contacto">Contacto</a>
         </nav>
 
-        <a
-            href="https://wa.me/573138608226"
-            target="_blank"
-            class="header-button"
-        >
-            Cotizar
-        </a>
+    </div>
+</header>
 
-    </header>
+<section class="hero" id="inicio">
 
+    <div class="overlay"></div>
 
-    <!-- ================= HERO ================= -->
-    <section class="hero" id="inicio">
+    <div class="hero-content">
 
-        <div class="hero-overlay"></div>
+        <span class="badge">
+            Más de 11 años de experiencia
+        </span>
 
-        <div class="hero-content">
+        <h1>
+            Construimos y transformamos
+            espacios con calidad profesional
+        </h1>
 
-            <span class="hero-small">
-                CONSTRUCCIÓN · DISEÑO · CALIDAD
-            </span>
+        <p>
+            Construcción, remodelación, mantenimiento locativo,
+            instalaciones eléctricas e hidrosanitarias.
+        </p>
 
-            <h1>
-                Construimos espacios
-                <span>que inspiran.</span>
-            </h1>
+        <div class="hero-buttons">
+            <a href="https://wa.me/573138608226" class="btn">
+                Solicitar Cotización
+            </a>
+        </div>
 
-            <p>
-                Transformamos tus ideas en espacios modernos,
-                funcionales y diseñados para durar.
-            </p>
+    </div>
 
-            <div class="hero-buttons">
+</section>
 
-                <a
-                    href="https://wa.me/573138608226"
-                    target="_blank"
-                    class="button primary"
-                >
-                    Solicitar cotización
-                </a>
+<section class="services" id="servicios">
 
-                <a href="#galeria" class="button secondary">
-                    Ver proyectos
-                </a>
+    <div class="container">
 
+        <h2>Nuestros Servicios</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Construcción</h3>
+                <p>Obras nuevas, ampliaciones y remodelaciones.</p>
+            </div>
+
+            <div class="card">
+                <h3>Mantenimiento</h3>
+                <p>Mantenimiento locativo residencial y comercial.</p>
+            </div>
+
+            <div class="card">
+                <h3>Instalaciones</h3>
+                <p>Trabajos eléctricos e hidrosanitarios.</p>
+            </div>
+
+            <div class="card">
+                <h3>Acabados Premium</h3>
+                <p>Pintura, drywall, enchape y terminaciones de calidad.</p>
             </div>
 
         </div>
 
-    </section>
+    </div>
 
+</section>
 
-    <!-- ================= NOSOTROS ================= -->
-    <section class="about" id="nosotros">
+<section class="about">
+
+    <div class="container about-grid">
+
+        <div>
+            <span class="section-tag">LIMD Construcciones</span>
+
+            <h2>Experiencia y compromiso en cada proyecto</h2>
+
+            <p>
+                Desde 2015 trabajamos para transformar espacios
+                residenciales y comerciales con altos estándares
+                de calidad y cumplimiento.
+            </p>
+
+            <p>
+                Nuestro objetivo es entregar soluciones duraderas,
+                funcionales y visualmente atractivas.
+            </p>
+        </div>
 
         <div class="about-image">
-            <img
-                src="imagenes/cocina.jpg"
-                alt="Proyecto de construcción LIMD"
-            >
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200" alt="">
         </div>
 
-        <div class="about-content">
+    </div>
 
-            <span class="section-tag">
-                SOBRE NOSOTROS
-            </span>
+</section>
 
-            <h2>
-                Experiencia que se
-                transforma en calidad.
-            </h2>
+<section class="gallery" id="proyectos">
 
-            <p>
-                Desde 2015 trabajamos en la creación y transformación
-                de espacios, ofreciendo soluciones de construcción,
-                remodelación y diseño.
-            </p>
+    <div class="container">
 
-            <p>
-                Nuestro compromiso es entregar proyectos con
-                excelentes acabados, atención personalizada y
-                resultados que superen las expectativas de nuestros
-                clientes.
-            </p>
-
-            <div class="about-number">
-                <strong>+10</strong>
-                <span>Años construyendo<br>espacios excepcionales</span>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= SERVICIOS ================= -->
-    <section class="services" id="servicios">
-
-        <div class="section-heading">
-
-            <span class="section-tag">
-                LO QUE HACEMOS
-            </span>
-
-            <h2>
-                Nuestros servicios
-            </h2>
-
-            <p>
-                Soluciones pensadas para transformar cada espacio.
-            </p>
-
-        </div>
-
-
-        <div class="services-grid">
-
-            <article class="service-card">
-
-                <div class="service-image">
-                    <img
-                        src="imagenes cocina.jpg"
-                        alt="Diseño de cocinas"
-                    >
-                </div>
-
-                <div class="service-content">
-                    <span>01</span>
-
-                    <h3>
-                        Diseño de cocinas
-                    </h3>
-
-                    <p>
-                        Diseñamos cocinas modernas, funcionales
-                        y adaptadas a cada espacio.
-                    </p>
-                </div>
-
-            </article>
-
-
-            <article class="service-card">
-
-                <div class="service-image">
-                    <img
-                        src="imagenes/sala.jpg"
-                        alt="Diseño de interiores"
-                    >
-                </div>
-
-                <div class="service-content">
-                    <span>02</span>
-
-                    <h3>
-                        Diseño de interiores
-                    </h3>
-
-                    <p>
-                        Creamos ambientes modernos y personalizados
-                        para hogares y espacios comerciales.
-                    </p>
-                </div>
-
-            </article>
-
-
-            <article class="service-card">
-
-                <div class="service-image">
-                    <img
-                        src="imagenes/closet.jpg"
-                        alt="Muebles y closets"
-                    >
-                </div>
-
-                <div class="service-content">
-                    <span>03</span>
-
-                    <h3>
-                        Muebles y closets
-                    </h3>
-
-                    <p>
-                        Fabricamos soluciones a medida para aprovechar
-                        cada espacio de manera inteligente.
-                    </p>
-                </div>
-
-            </article>
-
-
-            <article class="service-card">
-
-                <div class="service-image">
-                    <img
-                        src="imagenes/proyecto4.jpg"
-                        alt="Remodelación de espacios"
-                    >
-                </div>
-
-                <div class="service-content">
-                    <span>04</span>
-
-                    <h3>
-                        Remodelaciones
-                    </h3>
-
-                    <p>
-                        Renovamos espacios para darles una nueva vida,
-                        mejor distribución y acabados modernos.
-                    </p>
-                </div>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= GALERÍA ================= -->
-    <section class="gallery" id="galeria">
-
-        <div class="section-heading">
-
-            <span class="section-tag">
-                NUESTROS PROYECTOS
-            </span>
-
-            <h2>
-                Espacios que hablan por nosotros
-            </h2>
-
-            <p>
-                Algunos de nuestros trabajos y proyectos.
-            </p>
-
-        </div>
-
+        <h2>Proyectos Realizados</h2>
 
         <div class="gallery-grid">
 
-            <div class="gallery-item large">
-                <img
-                    src="imagenes/cocina.jpg"
-                    alt="Proyecto de cocina LIMD"
-                >
-                <div class="gallery-caption">
-                    <span>Cocinas</span>
-                    <h3>Diseño moderno</h3>
-                </div>
-            </div>
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200">
 
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200">
 
-            <div class="gallery-item">
-                <img
-                    src="imagenes/sala.jpg"
-                    alt="Proyecto de sala LIMD"
-                >
-                <div class="gallery-caption">
-                    <span>Interiores</span>
-                    <h3>Espacios modernos</h3>
-                </div>
-            </div>
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200">
 
-
-            <div class="gallery-item">
-                <img
-                    src="imagenes/closet.jpg"
-                    alt="Proyecto de closet LIMD"
-                >
-                <div class="gallery-caption">
-                    <span>Mobiliario</span>
-                    <h3>Diseño personalizado</h3>
-                </div>
-            </div>
-
-
-            <div class="gallery-item large">
-                <img
-                    src="imagenes/proyecto4.jpg"
-                    alt="Proyecto LIMD"
-                >
-                <div class="gallery-caption">
-                    <span>Remodelación</span>
-                    <h3>Transformación de espacios</h3>
-                </div>
-            </div>
+            <img src="https://images.unsplash.com/photo-1600047509807-ba8f99dc2ddd?q=80&w=1200">
 
         </div>
 
-    </section>
+    </div>
 
+</section>
 
-    <!-- ================= CTA ================= -->
-    <section class="cta" id="contacto">
+<section class="contact" id="contacto">
 
-        <div class="cta-content">
+    <div class="container">
 
-            <span class="section-tag">
-                ¿TIENES UN PROYECTO?
-            </span>
+        <h2>Solicita tu cotización</h2>
 
-            <h2>
-                Hagamos realidad
-                tu próximo espacio.
-            </h2>
+        <p>Atendemos proyectos residenciales y comerciales.</p>
 
-            <p>
-                Cuéntanos qué tienes en mente y recibe
-                asesoría para comenzar tu proyecto.
-            </p>
+        <a href="https://wa.me/573138608226" class="btn">
+            Hablar por WhatsApp
+        </a>
 
-            <a
-                href="https://wa.me/573138608226"
-                target="_blank"
-                class="button primary"
-            >
-                Hablar por WhatsApp
-            </a>
+    </div>
 
-        </div>
+</section>
 
-    </section>
+<footer>
 
+    <div class="container">
+        © 2026 LIMD Construcciones
+    </div>
 
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer">
-
-        <div class="footer-logo">
-
-            <div class="logo-icon">L</div>
-
-            <div class="logo-text">
-                <strong>LIMD</strong>
-                <span>Construcciones</span>
-            </div>
-
-        </div>
-
-        <p>
-            © 2026 LIMD Construcciones. Todos los derechos reservados.
-        </p>
-
-    </footer>
-
+</footer>
 
 </body>
 </html>
