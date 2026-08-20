@@ -244,17 +244,19 @@
     const beforeAfterSection = document.querySelector('.before-after');
     const beforeAfterVideo = document.querySelector('.video-frame video');
     const beforeAfterLogo = document.querySelector('.video-logo');
-    const beforeAfterVideos = [
-        'assets/videos/ambiente1.mp4',
-        'assets/videos/ambiente2.mp4',
-        'assets/videos/ambiente3.mp4',
-        'assets/videos/ambiente4.mp4'
+    const beforeAfterVideoNames = [
+        'ambiente1.mp4',
+        'ambiente2.mp4',
+        'ambiente3.mp4',
+        'ambiente4.mp4'
     ];
+    const beforeAfterVideoLocations = ['assets/videos', 'videos'];
+    let beforeAfterLocationIndex = 0;
     let beforeAfterVideoIndex = 0;
 
     function loadBeforeAfterVideo(index) {
         beforeAfterVideoIndex = index;
-        beforeAfterVideo.src = beforeAfterVideos[beforeAfterVideoIndex];
+        beforeAfterVideo.src = `${beforeAfterVideoLocations[beforeAfterLocationIndex]}/${beforeAfterVideoNames[beforeAfterVideoIndex]}`;
         beforeAfterVideo.load();
     }
 
@@ -263,15 +265,20 @@
         beforeAfterVideo.play().catch(() => {});
     });
     beforeAfterVideo.addEventListener('error', () => {
-        if (beforeAfterVideoIndex < beforeAfterVideos.length - 1) {
-            loadBeforeAfterVideo(beforeAfterVideoIndex + 1);
+        if (beforeAfterLocationIndex < beforeAfterVideoLocations.length - 1) {
+            beforeAfterLocationIndex += 1;
+            loadBeforeAfterVideo(beforeAfterVideoIndex);
+        } else if (beforeAfterVideoIndex < beforeAfterVideoNames.length - 1) {
+            beforeAfterLocationIndex = 0;
+            beforeAfterVideoIndex += 1;
+            loadBeforeAfterVideo(beforeAfterVideoIndex);
         } else {
             beforeAfterVideo.hidden = true;
             beforeAfterLogo.hidden = false;
         }
     });
     beforeAfterVideo.addEventListener('ended', () => {
-        if (beforeAfterVideoIndex < beforeAfterVideos.length - 1) {
+        if (beforeAfterVideoIndex < beforeAfterVideoNames.length - 1) {
             loadBeforeAfterVideo(beforeAfterVideoIndex + 1);
             return;
         }
@@ -288,6 +295,7 @@
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 if (!beforeAfterLogo.hidden) {
+                    beforeAfterLocationIndex = 0;
                     loadBeforeAfterVideo(0);
                     beforeAfterVideo.hidden = false;
                     beforeAfterLogo.hidden = true;
