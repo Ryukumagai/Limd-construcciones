@@ -5,13 +5,13 @@ body{background:var(--paper);color:var(--ink);font-family:'Poppins',sans-serif;l
 body.lightbox-open{overflow:hidden;}
 .container{width:min(1160px,calc(100% - 40px));margin:auto;}
 header{position:absolute;inset:0 0 auto;z-index:10;padding:22px 0;color:var(--white);}
-.nav{display:flex;align-items:center;justify-content:flex-end;gap:28px;}
+.nav{display:flex;align-items:center;justify-content:center;gap:clamp(28px,7vw,96px);width:100%;}
 .logo{display:flex;align-items:center;gap:12px;color:var(--white);text-decoration:none;min-width:0;}
 .logo img{width:184px;height:96px;flex-shrink:0;object-fit:cover;object-position:center;padding:0;background:#fff;border-radius:10px;box-shadow:0 12px 28px rgba(0,0,0,.22);}
 .logo-fallback{display:flex;flex-direction:column;line-height:1.1;}
 .logo-fallback strong{font-size:28px;letter-spacing:2px;}
 .logo-fallback span{font-size:10px;color:#ff9a52;letter-spacing:.8px;text-transform:uppercase;}
-nav{display:flex;gap:28px;align-items:center;}
+nav{display:flex;gap:clamp(24px,5vw,72px);align-items:center;justify-content:center;width:100%;}
 nav a{color:var(--white);text-decoration:none;font-size:14px;font-weight:600;}
 nav a:hover{color:#ff9a52;}
 .hero{min-height:700px;height:88vh;position:relative;display:flex;align-items:center;background:url('assets/servicios/construccion/fachadas-5.jpeg') center/cover;}
