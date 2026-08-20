@@ -136,11 +136,33 @@
 
 </section>
 
+<section class="before-after" id="antes-despues">
+    <div class="container before-after-grid">
+        <div class="before-after-copy">
+            <span class="section-tag">Transformaciones LIMD</span>
+            <h2>Del antes al resultado final</h2>
+            <p>Descubre cómo convertimos espacios comunes en ambientes funcionales, modernos y hechos para durar.</p>
+            <div class="before-after-labels" aria-label="Comparación del proyecto">
+                <span>ANTES</span>
+                <span>DESPUÉS</span>
+            </div>
+        </div>
+        <div class="video-frame" id="video-seccion">
+            <img class="video-logo" src="assets/servicios/logo.png" alt="LIMD Construcciones" hidden>
+            <video muted playsinline autoplay preload="metadata" poster="assets/videos/antesdespues.png" aria-label="Video de transformación antes y después">
+                Tu navegador no puede reproducir este video.
+            </video>
+        </div>
+    </div>
+</section>
+
 <section class="gallery" id="proyectos">
 
     <div class="container">
 
+        <span class="gallery-kicker">Portafolio LIMD</span>
         <h2>Proyectos Realizados</h2>
+        <p class="gallery-intro">Explora nuestros trabajos de construcción, mantenimiento, instalaciones y acabados premium.</p>
 
         <div class="gallery-filters" aria-label="Filtrar proyectos">
             <button class="filter-button active" type="button" data-filter="todos">Todos</button>
@@ -174,13 +196,11 @@
             <button class="gallery-item" type="button" data-category="instalaciones" data-title="Instalaciones"><img src="assets/servicios/instalaciones/cielos.6.jpeg" alt="Trabajo de instalación" loading="lazy"></button>
             <button class="gallery-item" type="button" data-category="acabados" data-title="Acabados Premium - Baño"><img src="assets/servicios/acabados-premium/baño-1.jpeg" alt="Acabado premium de baño" loading="lazy"></button>
             <button class="gallery-item" type="button" data-category="acabados" data-title="Acabados Premium - Baño"><img src="assets/servicios/acabados-premium/baño-2.jpeg" alt="Baño remodelado" loading="lazy"></button>
-            <button class="gallery-item" type="button" data-category="acabados" data-title="Acabados Premium - Baño"><img src="assets/servicios/acabados-premium/baño-3.jpeg" alt="Diseño de baño" loading="lazy"></button>
             <button class="gallery-item" type="button" data-category="acabados" data-title="Acabados Premium - Baño"><img src="assets/servicios/acabados-premium/baño-4.jpeg" alt="Enchape de baño" loading="lazy"></button>
             <button class="gallery-item" type="button" data-category="acabados" data-title="Acabados Premium - Baño"><img src="assets/servicios/acabados-premium/baño-5.jpeg" alt="Acabados de baño" loading="lazy"></button>
             <button class="gallery-item" type="button" data-category="acabados" data-title="Acabados Premium - Baño"><img src="assets/servicios/acabados-premium/baño-6.jpeg" alt="Baño terminado" loading="lazy"></button>
             <button class="gallery-item" type="button" data-category="acabados" data-title="Acabados Premium - Baño"><img src="assets/servicios/acabados-premium/baño-7.jpeg" alt="Remodelación de baño" loading="lazy"></button>
             <button class="gallery-item" type="button" data-category="acabados" data-title="Acabados Premium - Baño"><img src="assets/servicios/acabados-premium/baño-8.jpeg" alt="Baño contemporáneo" loading="lazy"></button>
-            <button class="gallery-item" type="button" data-category="acabados" data-title="Acabados Premium - Baño"><img src="assets/servicios/acabados-premium/baño-9.jpeg" alt="Detalle de baño" loading="lazy"></button>
             <button class="gallery-item" type="button" data-category="acabados" data-title="Acabados Premium - Cocina"><img src="assets/servicios/acabados-premium/cocina-1.jpeg" alt="Cocina remodelada" loading="lazy"></button>
             <button class="gallery-item" type="button" data-category="acabados" data-title="Acabados Premium - Cocina"><img src="assets/servicios/acabados-premium/cocina-2.jpeg" alt="Acabado de cocina" loading="lazy"></button>
             <button class="gallery-item" type="button" data-category="acabados" data-title="Acabados Premium - Cocina"><img src="assets/servicios/acabados-premium/cocina-3.jpeg" alt="Cocina LIMD" loading="lazy"></button>
@@ -215,9 +235,75 @@
     let visibleItems = galleryItems;
     let currentIndex = 0;
 
+    document.querySelectorAll('img').forEach(image => image.addEventListener('error', () => {
+        const removable = image.closest('.gallery-item, .service-card, .hero-logo');
+        if (removable) removable.remove();
+        else image.hidden = true;
+    }));
+
+    const beforeAfterSection = document.querySelector('.before-after');
+    const beforeAfterVideo = document.querySelector('.video-frame video');
+    const beforeAfterLogo = document.querySelector('.video-logo');
+    const beforeAfterVideos = [
+        'assets/videos/ambiente1.mp4',
+        'assets/videos/ambiente2.mp4',
+        'assets/videos/ambiente3.mp4',
+        'assets/videos/ambiente4.mp4'
+    ];
+    let beforeAfterVideoIndex = 0;
+
+    function loadBeforeAfterVideo(index) {
+        beforeAfterVideoIndex = index;
+        beforeAfterVideo.src = beforeAfterVideos[beforeAfterVideoIndex];
+        beforeAfterVideo.load();
+    }
+
+    beforeAfterVideo.addEventListener('loadeddata', () => {
+        beforeAfterLogo.hidden = true;
+        beforeAfterVideo.play().catch(() => {});
+    });
+    beforeAfterVideo.addEventListener('error', () => {
+        if (beforeAfterVideoIndex < beforeAfterVideos.length - 1) {
+            loadBeforeAfterVideo(beforeAfterVideoIndex + 1);
+        } else {
+            beforeAfterVideo.hidden = true;
+            beforeAfterLogo.hidden = false;
+        }
+    });
+    beforeAfterVideo.addEventListener('ended', () => {
+        if (beforeAfterVideoIndex < beforeAfterVideos.length - 1) {
+            loadBeforeAfterVideo(beforeAfterVideoIndex + 1);
+            return;
+        }
+
+        beforeAfterVideo.pause();
+        beforeAfterVideo.currentTime = 0;
+        beforeAfterVideo.hidden = true;
+        beforeAfterLogo.hidden = false;
+    });
+
+    loadBeforeAfterVideo(0);
+
+    const beforeAfterObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (!beforeAfterLogo.hidden) {
+                    loadBeforeAfterVideo(0);
+                    beforeAfterVideo.hidden = false;
+                    beforeAfterLogo.hidden = true;
+                }
+                beforeAfterVideo.play().catch(() => {});
+            } else {
+                beforeAfterVideo.pause();
+            }
+        });
+    }, { threshold: 0.5 });
+    beforeAfterObserver.observe(beforeAfterSection);
+
     function updateGallery(filter) {
         visibleItems = galleryItems.filter(item => filter === 'todos' || item.dataset.category === filter);
         galleryItems.forEach(item => item.hidden = !visibleItems.includes(item));
+        document.querySelector('.gallery-grid').classList.toggle('filtered', filter !== 'todos');
     }
 
     function showImage(index) {
@@ -335,6 +421,7 @@
                 <span class="contact-label">Llámanos o escríbenos</span>
                 <a href="tel:+573138608226">+57 313 860 8226</a>
                 <a href="tel:+573168664152">+57 316 866 4152</a>
+                <a href="mailto:davidestiben1123@gmail.com">davidestiben1123@gmail.com</a>
             </div>
             <div class="contact-detail">
                 <span class="contact-label">Horario de atención</span>
@@ -345,7 +432,7 @@
                 <span class="contact-label">Síguenos próximamente</span>
                 <div class="social-links">
                     <a href="https://www.facebook.com/limd.construcciones" target="_blank" rel="noopener noreferrer">Facebook · LIMD Construcciones</a>
-                    <a href="https://www.instagram.com/limd.construcciones" target="_blank" rel="noopener noreferrer">Instagram · @limd.construcciones</a>
+                    <a href="https://www.instagram.com/limdconstrucciones" target="_blank" rel="noopener noreferrer">Instagram · @limdconstrucciones</a>
                 </div>
             </div>
         </div>
